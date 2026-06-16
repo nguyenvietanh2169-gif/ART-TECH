@@ -1,7 +1,34 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "../utils/animations";
 
 export default function Solution() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch((err) => console.log("Solution video play error:", err));
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(video);
+    return () => {
+      observer.unobserve(video);
+    };
+  }, []);
+
   return (
     <section
       id="exhibitions-section"
@@ -14,10 +41,11 @@ export default function Solution() {
           className="w-full aspect-[3/1] rounded-2xl overflow-hidden border border-border/20 shadow-2xl relative bg-card/5"
         >
           <video
-            autoPlay
+            ref={videoRef}
             loop
             muted
             playsInline
+            preload="none"
             className="w-full h-full object-cover"
           >
             <source

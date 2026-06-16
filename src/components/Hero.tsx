@@ -1,12 +1,40 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "../utils/animations";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Explicitly set muting for iOS Safari support
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch((err) => console.log("Hero video play error:", err));
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(video);
+    return () => {
+      observer.unobserve(video);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-start items-center overflow-hidden bg-black px-4">
       {/* Background Video with 100% opacity and high contrast for sharp details */}
       <video
-        autoPlay
+        ref={videoRef}
         loop
         muted
         playsInline

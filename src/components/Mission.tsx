@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { translations } from "../utils/translations";
 import type { Language } from "../utils/translations";
@@ -80,6 +80,7 @@ interface MissionProps {
 
 export default function Mission({ lang }: MissionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const t = translations[lang].about;
 
   // Track scroll position of the section
@@ -87,6 +88,30 @@ export default function Mission({ lang }: MissionProps) {
     target: sectionRef,
     offset: ["start end", "end start"],
   });
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch((err) => console.log("Mission video play error:", err));
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(video);
+    return () => {
+      observer.unobserve(video);
+    };
+  }, []);
 
   return (
     <section
@@ -98,10 +123,11 @@ export default function Mission({ lang }: MissionProps) {
         {/* Large Centered Video Loop */}
         <div className="w-full max-w-[600px] md:max-w-[800px] aspect-square rounded-full border border-border/20 overflow-hidden mb-24 relative bg-card/5 shadow-[0_0_50px_rgba(255,255,255,0.03)]">
           <video
-            autoPlay
+            ref={videoRef}
             loop
             muted
             playsInline
+            preload="none"
             className="w-full h-full object-cover select-none"
           >
             <source

@@ -18,28 +18,46 @@ export default function CTA({ lang }: CTAProps) {
     const video = videoRef.current;
     if (!video) return;
 
-    let hls: Hls | null = null;
+    video.muted = true;
+    video.defaultMuted = true;
 
-    if (Hls.isSupported()) {
-      hls = new Hls({
-        maxMaxBufferLength: 10,
-        enableWorker: true,
-        lowLatencyMode: true,
-      });
-      hls.loadSource(hlsUrl);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play().catch((err) => console.log("HLS play error:", err));
-      });
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      // Native HLS fallback (Safari)
-      video.src = hlsUrl;
-      video.addEventListener("loadedmetadata", () => {
-        video.play().catch((err) => console.log("Native HLS play error:", err));
-      });
-    }
+    let hls: Hls | null = null;
+    let isInitialized = false;
+
+    const initHls = () => {
+      if (isInitialized) return;
+      isInitialized = true;
+
+      if (Hls.isSupported()) {
+        hls = new Hls({
+          maxMaxBufferLength: 10,
+          enableWorker: true,
+          lowLatencyMode: true,
+        });
+        hls.loadSource(hlsUrl);
+        hls.attachMedia(video);
+      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        // Native HLS fallback (Safari)
+        video.src = hlsUrl;
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          initHls();
+          video.play().catch((err) => console.log("HLS play error:", err));
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(video);
 
     return () => {
+      observer.unobserve(video);
       if (hls) {
         hls.destroy();
       }
@@ -57,6 +75,7 @@ export default function CTA({ lang }: CTAProps) {
         muted
         loop
         playsInline
+        preload="none"
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 select-none pointer-events-none"
       />
 

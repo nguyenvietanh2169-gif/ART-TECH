@@ -1,7 +1,53 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "../utils/animations";
 import { translations } from "../utils/translations";
 import type { Language } from "../utils/translations";
+
+interface ShowcaseVideoProps {
+  src: string;
+}
+
+function ShowcaseVideo({ src }: ShowcaseVideoProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch((err) => console.log("Showcase video play error:", err));
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(video);
+    return () => {
+      observer.unobserve(video);
+    };
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      loop
+      muted
+      playsInline
+      preload="none"
+      className="w-full h-full object-cover select-none filter contrast-[1.05] brightness-[1.05] transition-transform duration-[800ms] group-hover:scale-101"
+    >
+      <source src={src} type="video/mp4" />
+    </video>
+  );
+}
 
 interface SearchHasChangedProps {
   lang: Language;
@@ -74,15 +120,7 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
                 className="w-full aspect-video flex flex-col rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(255,255,255,0.02)] border border-border/20 bg-black cursor-pointer group"
               >
                 <div className="relative w-full h-full overflow-hidden">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover select-none filter contrast-[1.05] brightness-[1.05] transition-transform duration-[800ms] group-hover:scale-101"
-                  >
-                    <source src={show.video} type="video/mp4" />
-                  </video>
+                  <ShowcaseVideo src={show.video} />
                   {/* Subtle Hover Overlay */}
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
                   {/* View Live Tag */}
