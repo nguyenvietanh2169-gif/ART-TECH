@@ -106,7 +106,7 @@ export default function CTA({ lang }: CTAProps) {
           href={`mailto:${t.email}`}
           whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
           whileTap={{ scale: 0.98 }}
-          className="liquid-glass border border-white/10 text-foreground font-mono font-medium rounded-2xl px-10 py-5 text-xl md:text-3xl shadow-[0_0_30px_rgba(255,255,255,0.02)] transition-all duration-300 cursor-pointer select-all inline-block"
+          className="liquid-glass border border-white/10 text-foreground font-mono font-medium rounded-2xl px-4 py-3 sm:px-10 sm:py-5 text-xs min-[360px]:text-sm sm:text-xl md:text-3xl shadow-[0_0_30px_rgba(255,255,255,0.02)] transition-all duration-300 cursor-pointer select-all inline-block max-w-full"
         >
           {t.email}
         </motion.a>

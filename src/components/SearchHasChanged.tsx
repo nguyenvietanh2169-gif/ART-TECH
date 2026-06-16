@@ -61,6 +61,7 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
       name: t.vanzi3Name,
       video: "/videos/vanzi-demo.mp4",
       price: t.vanzi3Price,
+      slots: t.vanzi3Slots,
       link: "https://vanziondabeat3.vercel.app",
       description: t.vanzi3Desc,
     },
@@ -68,6 +69,7 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
       name: t.vanzi1Name,
       video: "/videos/vanzi-demo-2.mp4",
       price: t.vanzi1Price,
+      slots: t.vanzi1Slots,
       link: "https://vanziondabeat.vercel.app/",
       description: t.vanzi1Desc,
     },
@@ -151,20 +153,15 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
                     <span className="font-mono text-lg font-bold text-foreground block mt-0.5">
                       {show.price}
                     </span>
+                    <span className="text-[10px] text-muted-foreground block mt-1 font-light tracking-wide">
+                      {show.slots}
+                    </span>
                   </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom Tagline */}
-        <motion.div
-          {...fadeUp(0.6)}
-          className="text-muted-foreground text-sm tracking-widest uppercase mt-8 border-t border-border/15 pt-8 w-full max-w-md"
-        >
-          {t.tagline}
-        </motion.div>
       </div>
     </section>
   );

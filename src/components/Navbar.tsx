@@ -75,15 +75,15 @@ export default function Navbar({ lang, toggleLang }: NavbarProps) {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-28 py-4 bg-transparent backdrop-blur-[2px]">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-28 py-4 bg-transparent backdrop-blur-[2px]">
       {/* Left: Logo & Nav Links */}
       <div className="flex items-center gap-10">
         {/* Logo */}
-        <a href="#" onClick={(e) => handleScroll(e, "#")} className="flex items-center gap-3 group">
-          <div className="w-7 h-7 rounded-full border-2 border-foreground/60 flex items-center justify-center transition-colors group-hover:border-foreground">
-            <div className="w-3 h-3 rounded-full border border-foreground/60 transition-colors group-hover:border-foreground" />
+        <a href="#" onClick={(e) => handleScroll(e, "#")} className="flex items-center gap-2 sm:gap-3 group">
+          <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-foreground/60 flex items-center justify-center transition-colors group-hover:border-foreground">
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-foreground/60 transition-colors group-hover:border-foreground" />
           </div>
-          <span className="font-bold text-xl tracking-[-1px] text-foreground uppercase select-none">
+          <span className="font-bold text-lg sm:text-xl tracking-[-1px] text-foreground uppercase select-none">
             ART
             <span className="font-serif italic font-normal text-muted-foreground/80 lowercase mx-0.5">
               &
@@ -112,9 +112,9 @@ export default function Navbar({ lang, toggleLang }: NavbarProps) {
       </div>
 
       {/* Right: Social Icons & Language Switcher */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         {/* Social Icons */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           {[
             { icon: InstagramIcon, href: "https://www.instagram.com/vietanhnguyen.raw/", label: "Instagram" },
             { icon: FacebookIcon, href: "https://www.facebook.com/viet.anh.nguyen.291622/", label: "Facebook" },
@@ -128,11 +128,11 @@ export default function Navbar({ lang, toggleLang }: NavbarProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="liquid-glass w-10 h-10 rounded-full flex items-center justify-center text-foreground hover:text-foreground/80 transition-colors cursor-pointer"
+                className="liquid-glass w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-foreground hover:text-foreground/80 transition-colors cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </motion.a>
             );
           })}
@@ -141,7 +141,7 @@ export default function Navbar({ lang, toggleLang }: NavbarProps) {
         {/* Language Switcher */}
         <motion.button
           onClick={toggleLang}
-          className="liquid-glass px-4 h-10 rounded-full flex items-center justify-center text-xs font-mono font-semibold tracking-wider text-foreground hover:text-foreground/80 cursor-pointer gap-1 select-none"
+          className="liquid-glass px-3 sm:px-4 h-8 sm:h-10 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-foreground hover:text-foreground/80 cursor-pointer gap-0.5 sm:gap-1 select-none"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

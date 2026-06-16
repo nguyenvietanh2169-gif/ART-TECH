@@ -19,8 +19,8 @@ function WordReveal({ word, progress, wordStart, wordEnd, isHighlighted }: WordR
       style={{ opacity }}
       className={
         isHighlighted
-          ? "text-foreground font-semibold"
-          : "text-[hsl(var(--hero-subtitle))] font-normal"
+          ? "text-foreground"
+          : "text-[hsl(var(--hero-subtitle))]"
       }
     >
       {word}{" "}
@@ -117,9 +117,20 @@ export default function Mission({ lang }: MissionProps) {
     <section
       id="about-section"
       ref={sectionRef}
-      className="relative bg-black text-foreground pt-0 pb-32 md:pb-44 px-8 md:px-28 flex flex-col items-center overflow-hidden"
+      className="relative bg-black text-foreground pt-44 md:pt-64 pb-32 md:pb-44 px-8 md:px-28 flex flex-col items-center overflow-hidden"
     >
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+        {/* Tagline placed between Hero and Mission Video */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 0.5, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="text-muted-foreground text-sm sm:text-base tracking-normal uppercase max-w-2xl mb-36 md:mb-52 text-center leading-relaxed font-light select-none"
+        >
+          {translations[lang].portfolio.tagline}
+        </motion.div>
+
         {/* Large Centered Video Loop */}
         <div className="w-full max-w-[600px] md:max-w-[800px] aspect-square rounded-full border border-border/20 overflow-hidden mb-24 relative bg-card/5 shadow-[0_0_50px_rgba(255,255,255,0.03)]">
           <video
@@ -147,7 +158,7 @@ export default function Mission({ lang }: MissionProps) {
             progress={scrollYProgress}
             range={[0.15, 0.45]}
             highlightWords={t.highlights}
-            className="text-2xl md:text-4xl lg:text-5xl font-medium tracking-[-1px] leading-snug"
+            className="font-sans font-extralight italic text-4xl md:text-6xl lg:text-7xl leading-tight"
           />
 
           {/* Paragraph 2 */}
@@ -155,7 +166,7 @@ export default function Mission({ lang }: MissionProps) {
             text={t.paragraph2}
             progress={scrollYProgress}
             range={[0.45, 0.75]}
-            className="text-xl md:text-2xl lg:text-3xl font-medium mt-10 leading-relaxed"
+            className="font-sans font-light italic text-2xl md:text-3xl lg:text-4xl mt-12 leading-relaxed text-foreground/80"
           />
         </div>
       </div>

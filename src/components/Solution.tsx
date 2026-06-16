@@ -35,10 +35,10 @@ export default function Solution() {
       className="relative bg-black py-20 border-t border-border/30 px-8 md:px-28 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto flex flex-col items-center">
-        {/* aspect-[3/1] Video */}
+        {/* aspect-video md:aspect-[3/1] Video */}
         <motion.div
           {...fadeUp(0.2)}
-          className="w-full aspect-[3/1] rounded-2xl overflow-hidden border border-border/20 shadow-2xl relative bg-card/5"
+          className="w-full aspect-video md:aspect-[3/1] rounded-2xl overflow-hidden border border-border/20 shadow-2xl relative bg-card/5"
         >
           <video
             ref={videoRef}
