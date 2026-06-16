@@ -1,0 +1,133 @@
+import { motion } from "framer-motion";
+import { fadeUp } from "../utils/animations";
+import { translations } from "../utils/translations";
+import type { Language } from "../utils/translations";
+
+interface SearchHasChangedProps {
+  lang: Language;
+}
+
+export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
+  const t = translations[lang].portfolio;
+
+  const showcases = [
+    {
+      name: t.vanzi3Name,
+      video: "/videos/vanzi-demo.mp4",
+      price: t.vanzi3Price,
+      link: "https://vanziondabeat3.vercel.app",
+      description: t.vanzi3Desc,
+    },
+    {
+      name: t.vanzi1Name,
+      video: "/videos/vanzi-demo-2.mp4",
+      price: t.vanzi1Price,
+      link: "https://vanziondabeat.vercel.app/",
+      description: t.vanzi1Desc,
+    },
+  ];
+
+  return (
+    <section
+      id="portfolio-section"
+      className="relative bg-black text-foreground pt-52 md:pt-64 pb-20 px-8 md:px-28 overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+        {/* Heading */}
+        <motion.h2
+          {...fadeUp(0.1)}
+          className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-[-2px] leading-[1.05] max-w-4xl"
+        >
+          {lang === "en" ? (
+            <>
+              Selected <span className="font-serif italic font-normal">Showcases</span>
+            </>
+          ) : (
+            <>
+              Tuyển Tập <span className="font-serif italic font-normal">Thiết Kế</span>
+            </>
+          )}
+        </motion.h2>
+
+        {/* Subtitle */}
+        <motion.p
+          {...fadeUp(0.2)}
+          className="text-muted-foreground text-base md:text-lg max-w-3xl mt-8 mb-20 leading-relaxed"
+        >
+          {t.subtitle}
+        </motion.p>
+
+        {/* 2-Column Showcases Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mb-12 text-left">
+          {showcases.map((show, index) => (
+            <motion.div
+              key={show.name}
+              {...fadeUp(0.3 + index * 0.1)}
+              className="flex flex-col gap-6"
+            >
+              {/* Clean Mockup Frame (No Top Bar) */}
+              <motion.a
+                href={show.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -6 }}
+                className="w-full aspect-video flex flex-col rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(255,255,255,0.02)] border border-border/20 bg-black cursor-pointer group"
+              >
+                <div className="relative w-full h-full overflow-hidden">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover select-none filter contrast-[1.05] brightness-[1.05] transition-transform duration-[800ms] group-hover:scale-101"
+                  >
+                    <source src={show.video} type="video/mp4" />
+                  </video>
+                  {/* Subtle Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
+                  {/* View Live Tag */}
+                  <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-md text-[10px] tracking-wider uppercase text-foreground px-3 py-1.5 rounded-lg border border-white/10 opacity-70 group-hover:opacity-100 transition-opacity">
+                    {t.liveTag}
+                  </div>
+                </div>
+              </motion.a>
+
+              {/* Showcase metadata */}
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-card/10 border border-border/10 p-6 rounded-2xl gap-4 backdrop-blur-sm">
+                <div>
+                  <h3 className="font-semibold text-lg text-foreground mb-1 tracking-wide">
+                    {show.name}
+                  </h3>
+                  <p className="text-muted-foreground text-xs max-w-sm leading-relaxed">
+                    {show.description}
+                  </p>
+                </div>
+                <div className="flex flex-row md:flex-col justify-between items-center md:items-end w-full md:w-auto shrink-0 border-t border-border/10 md:border-none pt-3 md:pt-0">
+                  <span className="text-[9px] text-muted-foreground uppercase tracking-widest block md:hidden">
+                    {t.priceLabel}
+                  </span>
+                  <div className="text-right">
+                    <span className="text-[9px] text-muted-foreground uppercase tracking-widest hidden md:block">
+                      {t.priceLabel}
+                    </span>
+                    <span className="font-mono text-lg font-bold text-foreground block mt-0.5">
+                      {show.price}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom Tagline */}
+        <motion.div
+          {...fadeUp(0.6)}
+          className="text-muted-foreground text-sm tracking-widest uppercase mt-8 border-t border-border/15 pt-8 w-full max-w-md"
+        >
+          {t.tagline}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
