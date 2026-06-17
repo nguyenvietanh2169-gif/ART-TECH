@@ -117,6 +117,7 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -6 }}
+                data-cursor="view"
                 className="w-full aspect-video flex flex-col rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(255,255,255,0.02)] border border-border/20 bg-black cursor-pointer group"
               >
                 <div className="relative w-full h-full overflow-hidden">

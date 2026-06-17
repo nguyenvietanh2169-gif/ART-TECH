@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import Lenis from "lenis";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import SearchHasChanged from "./components/SearchHasChanged";
 import Mission from "./components/Mission";
 import Solution from "./components/Solution";
+import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import WelcomeOverlay from "./components/WelcomeOverlay";
 import AudioPlayer from "./components/AudioPlayer";
+import CustomCursor from "./components/CustomCursor";
 import type { Language } from "./utils/translations";
 
 export default function App() {
@@ -28,6 +31,28 @@ export default function App() {
     };
   }, [showOverlay]);
 
+  // Initialize Lenis smooth scroll
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   const toggleLang = () => {
     setLang((prev) => (prev === "en" ? "vi" : "en"));
   };
@@ -43,6 +68,9 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-black text-foreground overflow-x-hidden selection:bg-foreground selection:text-background">
+      {/* Custom Mouse Cursor */}
+      <CustomCursor />
+
       {/* Welcome Screen Overlay */}
       <AnimatePresence>
         {showOverlay && (
@@ -69,6 +97,9 @@ export default function App() {
 
         {/* 3. Portfolio Showcase */}
         <SearchHasChanged lang={lang} />
+
+        {/* FAQs Accordion */}
+        <FAQ lang={lang} />
 
         {/* 5. CTA Section */}
         <CTA lang={lang} />
