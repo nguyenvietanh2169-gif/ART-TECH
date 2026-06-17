@@ -100,7 +100,7 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
   return (
     <div className="fixed bottom-6 right-6 z-[990] flex items-center gap-3">
       {/* Hidden HTML5 Audio Element */}
-      <audio ref={audioRef} src="/nature-forest.mp3" preload="auto" />
+      <audio ref={audioRef} src="/night-lounge.mp3" preload="auto" />
 
       {/* Floating Info Tooltip */}
       <div
