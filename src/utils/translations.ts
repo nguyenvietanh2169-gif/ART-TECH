@@ -29,6 +29,7 @@ export const translations = {
         "Includes design service for 02 artistic posters to promote your personal brand.",
         "Custom domain integration: .com (+500,000 ₫/year) or .com.vn / .vn (+750,000 ₫/year)."
       ],
+      depositNote: "* 50% advance payment required to initiate the project.",
     },
     about: {
       paragraph1: "Creating art with pioneering technology.",
@@ -93,6 +94,7 @@ export const translations = {
         "Tặng kèm dịch vụ thiết kế 02 poster nghệ thuật quảng bá thương hiệu cá nhân.",
         "Tích hợp tên miền riêng: .com (+500.000 đ/năm) hoặc .com.vn / .vn (+750.000 đ/năm)."
       ],
+      depositNote: "* Áp dụng thanh toán trước 50% để bắt đầu thiết kế dự án.",
     },
     about: {
       paragraph1: "Sáng tạo nghệ thuật bằng công nghệ tiên phong.",

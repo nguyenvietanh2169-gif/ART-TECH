@@ -169,6 +169,13 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
                     </div>
                   ))}
                 </div>
+
+                {/* Deposit Note */}
+                {t.depositNote && (
+                  <div className="text-[10px] text-muted-foreground/45 italic mt-1.5 pt-2.5 border-t border-white/5 font-sans tracking-wide">
+                    {t.depositNote}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
