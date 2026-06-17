@@ -17,15 +17,17 @@ export const translations = {
       tagline: "“Crafting artistic interfaces for a new era.”",
       vanzi3Desc: "Premium interactive audio portfolio with responsive visualizer grids, release libraries, and integrated dark aesthetic controls.",
       vanzi1Desc: "Clean, immersive beatmaker timeline featuring live audio streaming grids, merchandise slots, and quick collaboration contacts.",
-      vanzi3Name: "Vanzi on da Beat 3 — Complete Template",
-      vanzi1Name: "Vanzi on da Beat 1 — Legacy Template",
+      vanzi3Name: "Vanzi on da Beat 3",
+      vanzi1Name: "Vanzi on da Beat 1",
       vanzi3Price: "$120 USD",
       vanzi1Price: "$180 USD",
       benefits: [
+        "Lifetime ownership & lifetime warranty",
         "Includes 2 free NFC keychains containing your website link",
         "Interface refresh (avatar, cover, colors, fonts) 2 times/year for only 1,000,000 ₫",
         "Free updates for images, info, and music at any time",
-        "Includes artistic styling service for 2 poster images"
+        "Includes artistic styling service for 2 poster images",
+        "Custom .com/.vn domain setup for +500,000 ₫ (or use free domain with no extra fees)"
       ],
     },
     about: {
@@ -79,15 +81,17 @@ export const translations = {
       tagline: "“kiến tạo giao diện nghệ thuật cho thời đại mới”",
       vanzi3Desc: "Hồ sơ âm thanh tương tác cao cấp với lưới trình trực quan hóa phản hồi, thư viện phát hành và tích hợp điều khiển thẩm mỹ tối.",
       vanzi1Desc: "Dòng thời gian beatmaker đắm chìm và tinh tế với lưới phát nhạc trực tiếp, mục bán sản phẩm và liên hệ hợp tác nhanh.",
-      vanzi3Name: "Vanzi on da Beat 3 — Bản Đầy Đủ",
-      vanzi1Name: "Vanzi on da Beat 1 — Bản Gốc",
+      vanzi3Name: "Vanzi on da Beat 3",
+      vanzi1Name: "Vanzi on da Beat 1",
       vanzi3Price: "3.000.000 ₫",
       vanzi1Price: "4.500.000 ₫",
       benefits: [
+        "Sở hữu trọn đời & Bảo hành trọn đời",
         "Tặng kèm 2 móc khóa NFC chứa link website",
         "Làm mới giao diện (bao gồm ảnh đại diện, ảnh bìa, màu sắc, font chữ) 2 lần trong 1 năm chỉ với 1.000.000 đ",
         "Cập nhật hình ảnh, thông tin, âm nhạc miễn phí bất cứ lúc nào",
-        "Tặng kèm dịch vụ làm mới 2 tấm ảnh poster theo phong cách nghệ thuật"
+        "Tặng kèm dịch vụ làm mới 2 tấm ảnh poster theo phong cách nghệ thuật",
+        "Mua tên miền riêng .com / .vn cộng thêm 500.000 đ (nếu không dùng sẽ không mất thêm phí gì)"
       ],
     },
     about: {
