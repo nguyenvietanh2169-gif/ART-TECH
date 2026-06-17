@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Play, ListMusic } from "lucide-react";
+import { Play } from "lucide-react";
 import type { Language } from "../utils/translations";
 
 interface AudioPlayerProps {
@@ -12,16 +12,6 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeIntervalRef = useRef<any>(null);
   const [hovered, setHovered] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
-
-  const tracks = [
-    { id: "night", name: "Night Lounge", nameVi: "Nhạc Đêm Thư Giãn", src: "/night-lounge.mp3" },
-    { id: "study", name: "Study Chill", nameVi: "Study Chill", src: "/study-chill.mp3" },
-    { id: "nature", name: "Nature Forest", nameVi: "Âm Thanh Rừng", src: "/nature-forest.mp3" },
-    { id: "original", name: "Original Ambient", nameVi: "Bản Gốc", src: "/ambient.mp3" },
-  ];
-
-  const [activeTrack, setActiveTrack] = useState(tracks[0]);
 
   const t = {
     en: {
@@ -29,14 +19,12 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
       paused: "Music paused",
       tooltipPlay: "Play music",
       tooltipPause: "Pause music",
-      playlist: "Choose Soundscape",
     },
     vi: {
       playing: "Đang phát nhạc nền",
       paused: "Đã dừng nhạc",
       tooltipPlay: "Phát nhạc",
       tooltipPause: "Dừng nhạc",
-      playlist: "Chọn Nhạc Nền",
     },
   };
 
@@ -77,51 +65,6 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
     }, stepDuration);
   };
 
-  const handleTrackSelect = (track: typeof activeTrack) => {
-    if (track.id === activeTrack.id) return;
-    
-    const audio = audioRef.current;
-    if (!audio) {
-      setActiveTrack(track);
-      return;
-    }
-
-    if (isPlaying) {
-      // Fade out, switch src, then load and fade in
-      fadeVolume(0, 400); // 0.4s fade-out
-      setTimeout(() => {
-        setActiveTrack(track);
-        audio.src = track.src;
-        audio.load();
-        audio.play()
-          .then(() => {
-            fadeVolume(0.4, 800); // 0.8s fade-in
-          })
-          .catch((err) => console.warn("Failed to play new track:", err));
-      }, 450);
-    } else {
-      setActiveTrack(track);
-      audio.src = track.src;
-      audio.load();
-    }
-  };
-
-  useEffect(() => {
-    if (!showMenu) return;
-    
-    const handleOutsideClick = (e: MouseEvent) => {
-      const container = document.getElementById("audio-player-container");
-      if (container && !container.contains(e.target as Node)) {
-        setShowMenu(false);
-      }
-    };
-    
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [showMenu]);
-
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -155,37 +98,9 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
   }, [isPlaying]);
 
   return (
-    <div id="audio-player-container" className="fixed bottom-6 right-6 z-[990] flex items-center gap-3">
+    <div className="fixed bottom-6 right-6 z-[990] flex items-center gap-3">
       {/* Hidden HTML5 Audio Element */}
-      <audio ref={audioRef} src={activeTrack.src} preload="auto" />
-
-      {/* Floating Playlist Menu */}
-      {showMenu && (
-        <div className="absolute bottom-16 right-0 w-48 rounded-xl border border-white/10 bg-black/85 backdrop-blur-xl p-2 shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col gap-1 z-[995] transition-all duration-300">
-          <div className="px-2.5 py-1 text-[9px] text-muted-foreground uppercase tracking-wider font-semibold border-b border-white/5 mb-1 select-none">
-            {currentT.playlist}
-          </div>
-          {tracks.map((track) => (
-            <button
-              key={track.id}
-              onClick={() => {
-                handleTrackSelect(track);
-                setShowMenu(false);
-              }}
-              className={`w-full text-left px-2.5 py-2 rounded-lg text-xs transition-colors flex items-center justify-between cursor-pointer ${
-                track.id === activeTrack.id
-                  ? "bg-white/10 text-white font-medium"
-                  : "text-muted-foreground hover:bg-white/5 hover:text-white"
-              }`}
-            >
-              <span>{lang === "vi" ? track.nameVi : track.name}</span>
-              {track.id === activeTrack.id && (
-                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              )}
-            </button>
-          ))}
-        </div>
-      )}
+      <audio ref={audioRef} src="/nature-forest.mp3" preload="auto" />
 
       {/* Floating Info Tooltip */}
       <div
@@ -195,19 +110,6 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
       >
         {isPlaying ? currentT.tooltipPause : currentT.tooltipPlay}
       </div>
-
-      {/* Playlist Toggle Button */}
-      <button
-        onClick={() => setShowMenu(!showMenu)}
-        aria-label="Toggle playlist"
-        className={`flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 border bg-black/30 backdrop-blur-lg shadow-[0_4px_30px_rgba(0,0,0,0.4)] cursor-pointer ${
-          showMenu
-            ? "border-white/40 bg-white/10 text-white"
-            : "border-white/10 hover:border-white/30 text-white/40 hover:text-white/80"
-        }`}
-      >
-        <ListMusic size={16} />
-      </button>
 
       {/* Elegant Glassmorphic Button */}
       <button
