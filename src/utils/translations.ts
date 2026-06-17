@@ -16,18 +16,18 @@ export const translations = {
       liveTag: "Open Live Site",
       tagline: "“Crafting artistic interfaces for a new era.”",
       vanzi3Desc: "Premium interactive audio portfolio with responsive visualizer grids, release libraries, and integrated dark aesthetic controls.",
-      vanzi1Desc: "Clean, immersive beatmaker timeline featuring live audio streaming grids, merchandise slots, and quick collaboration contacts.",
+      vanzi1Desc: "Personalized showcase space dedicated to Beatmakers. A place where artistry blends with technology through an intuitive online music streaming grid, optimizing transactions and facilitating rapid collaboration.",
       vanzi3Name: "Vanzi on da Beat 3",
       vanzi1Name: "Vanzi on da Beat 1",
       vanzi3Price: "$120 USD",
       vanzi1Price: "$180 USD",
       benefits: [
-        "Lifetime ownership & lifetime warranty",
-        "Includes 2 free NFC keychains containing your website link",
-        "Interface refresh (avatar, cover, colors, fonts) 2 times/year for only 1,000,000 ₫",
-        "Free updates for images, info, and music at any time",
-        "Includes artistic styling service for 2 poster images",
-        "Custom .com/.vn domain setup for +500,000 ₫ (or use free domain with no extra fees)"
+        "Lifetime ownership and lifetime warranty.",
+        "Includes 02 NFC keychains for quick connection to your Website.",
+        "Exclusive interface refresh 02 times/year (Change avatar, banner, colors, fonts) for only 1,000,000 ₫.",
+        "Free updates for images, info, and music at any time.",
+        "Includes design service for 02 artistic posters to promote your personal brand.",
+        "Custom domain integration: .com (+500,000 ₫/year) or .com.vn / .vn (+750,000 ₫/year)."
       ],
     },
     about: {
@@ -80,18 +80,18 @@ export const translations = {
       liveTag: "Mở trang mẫu",
       tagline: "“kiến tạo giao diện nghệ thuật cho thời đại mới”",
       vanzi3Desc: "Hồ sơ âm thanh tương tác cao cấp với lưới trình trực quan hóa phản hồi, thư viện phát hành và tích hợp điều khiển thẩm mỹ tối.",
-      vanzi1Desc: "Dòng thời gian beatmaker đắm chìm và tinh tế với lưới phát nhạc trực tiếp, mục bán sản phẩm và liên hệ hợp tác nhanh.",
+      vanzi1Desc: "Không gian hiển thị cá nhân hóa dành riêng cho các Beatmaker. Nơi chất nghệ thuật hòa quyện cùng công nghệ với hệ thống lưới phát nhạc trực tuyến trực quan, tối ưu hóa trải nghiệm mua bán sản phẩm và kết nối hợp tác nhanh chóng.",
       vanzi3Name: "Vanzi on da Beat 3",
       vanzi1Name: "Vanzi on da Beat 1",
       vanzi3Price: "3.000.000 ₫",
       vanzi1Price: "4.500.000 ₫",
       benefits: [
-        "Sở hữu trọn đời & Bảo hành trọn đời",
-        "Tặng kèm 2 móc khóa NFC chứa link website",
-        "Làm mới giao diện (bao gồm ảnh đại diện, ảnh bìa, màu sắc, font chữ) 2 lần trong 1 năm chỉ với 1.000.000 đ",
-        "Cập nhật hình ảnh, thông tin, âm nhạc miễn phí bất cứ lúc nào",
-        "Tặng kèm dịch vụ làm mới 2 tấm ảnh poster theo phong cách nghệ thuật",
-        "Mua tên miền riêng .com / .vn cộng thêm 500.000 đ (nếu không dùng sẽ không mất thêm phí gì)"
+        "Sở hữu và bảo hành trọn đời sản phẩm.",
+        "Tặng kèm 02 móc khóa NFC kết nối nhanh đến Website.",
+        "Đặc quyền làm mới giao diện 02 lần/năm (Thay đổi avatar, banner, màu sắc, font chữ) chỉ với 1.000.000 đ.",
+        "Tự do cập nhật hình ảnh, thông tin và âm nhạc miễn phí.",
+        "Tặng kèm dịch vụ thiết kế 02 poster nghệ thuật quảng bá thương hiệu cá nhân.",
+        "Tích hợp tên miền riêng: .com (+500.000 đ/năm) hoặc .com.vn / .vn (+750.000 đ/năm)."
       ],
     },
     about: {
