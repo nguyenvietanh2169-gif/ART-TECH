@@ -61,7 +61,6 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
       name: t.vanzi3Name,
       video: "/videos/vanzi-demo.mp4",
       price: t.vanzi3Price,
-      slots: t.vanzi3Slots,
       link: "https://vanziondabeat3.vercel.app",
       description: t.vanzi3Desc,
     },
@@ -69,7 +68,6 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
       name: t.vanzi1Name,
       video: "/videos/vanzi-demo-2.mp4",
       price: t.vanzi1Price,
-      slots: t.vanzi1Slots,
       link: "https://vanziondabeat.vercel.app/",
       description: t.vanzi1Desc,
     },
@@ -133,30 +131,43 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
               </motion.a>
 
               {/* Showcase metadata */}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-card/10 border border-border/10 p-6 rounded-2xl gap-4 backdrop-blur-sm">
-                <div>
-                  <h3 className="font-semibold text-lg text-foreground mb-1 tracking-wide">
-                    {show.name}
-                  </h3>
-                  <p className="text-muted-foreground text-xs max-w-sm leading-relaxed">
-                    {show.description}
-                  </p>
-                </div>
-                <div className="flex flex-row md:flex-col justify-between items-center md:items-end w-full md:w-auto shrink-0 border-t border-border/10 md:border-none pt-3 md:pt-0">
-                  <span className="text-[9px] text-muted-foreground uppercase tracking-widest block md:hidden">
-                    {t.priceLabel}
-                  </span>
-                  <div className="text-right">
-                    <span className="text-[9px] text-muted-foreground uppercase tracking-widest hidden md:block">
+              <div className="flex flex-col bg-card/10 border border-border/10 p-6 rounded-2xl gap-4 backdrop-blur-sm">
+                {/* Top Row: Name/Desc & Price */}
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 w-full">
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground mb-1 tracking-wide">
+                      {show.name}
+                    </h3>
+                    <p className="text-muted-foreground text-xs max-w-sm leading-relaxed">
+                      {show.description}
+                    </p>
+                  </div>
+                  <div className="flex flex-row md:flex-col justify-between items-center md:items-end w-full md:w-auto shrink-0 border-t border-border/10 md:border-none pt-3 md:pt-0">
+                    <span className="text-[9px] text-muted-foreground uppercase tracking-widest block md:hidden">
                       {t.priceLabel}
                     </span>
-                    <span className="font-mono text-lg font-bold text-foreground block mt-0.5">
-                      {show.price}
-                    </span>
-                    <span className="text-[10px] text-muted-foreground block mt-1 font-light tracking-wide">
-                      {show.slots}
-                    </span>
+                    <div className="text-right">
+                      <span className="text-[9px] text-muted-foreground uppercase tracking-widest hidden md:block">
+                        {t.priceLabel}
+                      </span>
+                      <span className="font-mono text-lg font-bold text-foreground block mt-0.5">
+                        {show.price}
+                      </span>
+                    </div>
                   </div>
+                </div>
+
+                {/* Divider Line */}
+                <div className="w-full h-[1px] bg-white/5 my-1" />
+
+                {/* Bottom Row: Benefits List */}
+                <div className="flex flex-col gap-2.5 text-xs text-muted-foreground font-light leading-relaxed">
+                  {t.benefits && t.benefits.map((benefit: string, bIdx: number) => (
+                    <div key={bIdx} className="flex items-start gap-2.5">
+                      <span className="text-foreground/45 text-[10px] select-none mt-0.5">•</span>
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </motion.div>

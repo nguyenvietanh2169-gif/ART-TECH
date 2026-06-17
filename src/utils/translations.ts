@@ -21,8 +21,12 @@ export const translations = {
       vanzi1Name: "Vanzi on da Beat 1 — Legacy Template",
       vanzi3Price: "$120 USD",
       vanzi1Price: "$180 USD",
-      vanzi3Slots: "10 slots",
-      vanzi1Slots: "5 slots",
+      benefits: [
+        "Includes 2 free NFC keychains containing your website link",
+        "Interface refresh (avatar, cover, colors, fonts) 2 times/year for only 1,000,000 ₫",
+        "Free updates for images, info, and music at any time",
+        "Includes artistic styling service for 2 poster images"
+      ],
     },
     about: {
       paragraph1: "Creating art with pioneering technology.",
@@ -79,8 +83,12 @@ export const translations = {
       vanzi1Name: "Vanzi on da Beat 1 — Bản Gốc",
       vanzi3Price: "3.000.000 ₫",
       vanzi1Price: "4.500.000 ₫",
-      vanzi3Slots: "10 suất",
-      vanzi1Slots: "5 suất",
+      benefits: [
+        "Tặng kèm 2 móc khóa NFC chứa link website",
+        "Làm mới giao diện (bao gồm ảnh đại diện, ảnh bìa, màu sắc, font chữ) 2 lần trong 1 năm chỉ với 1.000.000 đ",
+        "Cập nhật hình ảnh, thông tin, âm nhạc miễn phí bất cứ lúc nào",
+        "Tặng kèm dịch vụ làm mới 2 tấm ảnh poster theo phong cách nghệ thuật"
+      ],
     },
     about: {
       paragraph1: "Sáng tạo nghệ thuật bằng công nghệ tiên phong.",
