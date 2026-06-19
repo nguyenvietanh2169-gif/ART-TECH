@@ -26,7 +26,6 @@ export const translations = {
         "Includes 02 NFC keychains for quick connection to your Website.",
         "Exclusive interface refresh 02 times/year (Change avatar, banner, colors, fonts) for only 1,000,000 ₫.",
         "Free updates for images, info, and music at any time.",
-        "Includes design service for 02 artistic posters to promote your personal brand.",
         "Custom domain integration: .com (+500,000 ₫/year) or .com.vn / .vn (+750,000 ₫/year)."
       ],
       depositNote: "* 50% advance payment required to initiate the project.",
@@ -114,7 +113,6 @@ export const translations = {
         "Tặng kèm 02 móc khóa NFC kết nối nhanh đến Website.",
         "Đặc quyền làm mới giao diện 02 lần/năm (Thay đổi avatar, banner, màu sắc, font chữ) chỉ với 1.000.000 đ.",
         "Tự do cập nhật hình ảnh, thông tin và âm nhạc miễn phí.",
-        "Tặng kèm dịch vụ thiết kế 02 poster nghệ thuật quảng bá thương hiệu cá nhân.",
         "Tích hợp tên miền riêng: .com (+500.000 đ/năm) hoặc .com.vn / .vn (+750.000 đ/năm)."
       ],
       depositNote: "* Áp dụng thanh toán trước 50% để bắt đầu thiết kế dự án.",
