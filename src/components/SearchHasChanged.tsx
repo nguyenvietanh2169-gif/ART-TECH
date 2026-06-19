@@ -181,6 +181,22 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
             </motion.div>
           ))}
         </div>
+
+        {/* More coming notice */}
+        <motion.div
+          {...fadeUp(0.5)}
+          className="mt-16 flex flex-col items-center gap-2.5 text-muted-foreground/60 select-none"
+        >
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/60 animate-pulse" />
+            <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground/50 font-sans">
+              {lang === "en" ? "In Development" : "Đang Thiết Kế"}
+            </span>
+          </div>
+          <p className="font-sans text-xs sm:text-sm tracking-wide font-light max-w-md leading-relaxed text-center">
+            {t.moreComing}
+          </p>
+        </motion.div>
       </div>
     </section>
   );

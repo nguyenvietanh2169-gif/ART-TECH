@@ -30,6 +30,7 @@ export const translations = {
         "Custom domain integration: .com (+500,000 ₫/year) or .com.vn / .vn (+750,000 ₫/year)."
       ],
       depositNote: "* 50% advance payment required to initiate the project.",
+      moreComing: "More unique designs are being crafted and will be updated continuously.",
     },
     about: {
       paragraph1: "Creating art with pioneering technology.",
@@ -117,6 +118,7 @@ export const translations = {
         "Tích hợp tên miền riêng: .com (+500.000 đ/năm) hoặc .com.vn / .vn (+750.000 đ/năm)."
       ],
       depositNote: "* Áp dụng thanh toán trước 50% để bắt đầu thiết kế dự án.",
+      moreComing: "Nhiều thiết kế độc bản khác đang được thiết kế và sẽ liên tục được cập nhật thêm.",
     },
     about: {
       paragraph1: "Sáng tạo nghệ thuật bằng công nghệ tiên phong.",
