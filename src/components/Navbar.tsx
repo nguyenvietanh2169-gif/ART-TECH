@@ -80,15 +80,23 @@ export default function Navbar({ lang, toggleLang }: NavbarProps) {
       <div className="flex items-center gap-10">
         {/* Logo */}
         <a href="#" onClick={(e) => handleScroll(e, "#")} className="flex items-center gap-2 sm:gap-3 group">
-          <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-foreground/60 flex items-center justify-center transition-colors group-hover:border-foreground">
-            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-foreground/60 transition-colors group-hover:border-foreground" />
+          <div className="w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center text-white transition-colors">
+            <svg
+              viewBox="-45 -52.6 65 55.5"
+              fill="white"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-full h-full"
+            >
+              <g transform="scale(1, -1)">
+                <path d="M -40 3.9999999999999973 L -40 18 A 3.9999999999999964 3.9999999999999964 0 0 0 -38.4 21.200000000000003 L -3.1999999999999984 47.599999999999994 A 1.9999999999999953 1.9999999999999953 0 0 0 3.3306690738754696e-15 46.00000000000001 L -5.551115123125783e-16 39.342585690775024 A 4.999999999999998 4.999999999999998 0 0 1 7.773501066962015 35.182334276309724 L 11.890599796732616 37.927066885522564 A 1.9999999999999991 1.9999999999999991 0 0 0 15.000000223517421 36.26296631973644 L 15.000000223517418 12.140735182963596 A 3.9999999999999973 3.9999999999999973 0 0 0 13.218801008418339 8.812534005612227 L 3.1094003924504583 2.072933594966972 A 2 2 0 0 0 0 3.73703418364266 L 0 20 A 4.999999999999999 4.999999999999999 0 0 1 -8 24 L -36.800000000000004 2.399999999999998 A 1.9999999999999967 1.9999999999999967 0 0 0 -40 3.9999999999999973 Z" />
+              </g>
+            </svg>
           </div>
-          <span className="font-bold text-lg sm:text-xl tracking-[-1px] text-foreground uppercase select-none">
-            ART
-            <span className="font-serif italic font-normal text-muted-foreground/80 lowercase mx-0.5">
-              &
-            </span>
-            TECH
+          <span className="font-rounded font-semibold text-[11px] sm:text-xs tracking-[0.12em] text-foreground/90 uppercase select-none">
+            ART&TECH
           </span>
         </a>
 
