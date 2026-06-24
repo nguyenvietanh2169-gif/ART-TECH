@@ -84,20 +84,32 @@ export default function CTA({ lang }: CTAProps) {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center px-4">
-        {/* Concentric Circles Logo */}
+        {/* Brand Logo */}
         <motion.div
           {...fadeUp(0.1)}
-          className="w-10 h-10 rounded-full border-2 border-foreground/60 flex items-center justify-center bg-black/30 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.05)] mb-6"
+          className="w-16 h-16 text-white flex-shrink-0 mb-6"
         >
-          <div className="w-5 h-5 rounded-full border border-foreground/60" />
+          <svg
+            viewBox="-45 -52.6 65 55.5"
+            fill="white"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-full h-full"
+          >
+            <g transform="scale(1, -1)">
+              <path d="M -40 3.9999999999999973 L -40 18 A 3.9999999999999964 3.9999999999999964 0 0 0 -38.4 21.200000000000003 L -3.1999999999999984 47.599999999999994 A 1.9999999999999953 1.9999999999999953 0 0 0 3.3306690738754696e-15 46.00000000000001 L -5.551115123125783e-16 39.342585690775024 A 4.999999999999998 4.999999999999998 0 0 1 7.773501066962015 35.182334276309724 L 11.890599796732616 37.927066885522564 A 1.9999999999999991 1.9999999999999991 0 0 0 15.000000223517421 36.26296631973644 L 15.000000223517418 12.140735182963596 A 3.9999999999999973 3.9999999999999973 0 0 0 13.218801008418339 8.812534005612227 L 3.1094003924504583 2.072933594966972 A 2 2 0 0 0 0 3.73703418364266 L 0 20 A 4.999999999999999 4.999999999999999 0 0 1 -8 24 L -36.800000000000004 2.399999999999998 A 1.9999999999999967 1.9999999999999967 0 0 0 -40 3.9999999999999973 Z" />
+            </g>
+          </svg>
         </motion.div>
 
-        {/* Contact Label */}
+        {/* Brand Text */}
         <motion.span
           {...fadeUp(0.2)}
-          className="text-xs tracking-[4px] uppercase text-muted-foreground font-semibold block mb-3"
+          className="font-rounded font-semibold text-xl tracking-[0.2em] text-white uppercase select-none leading-none mr-[-0.2em] block mb-10"
         >
-          {t.label}
+          ART&TECH
         </motion.span>
 
         {/* Refined Liquid Glass Email Card */}
