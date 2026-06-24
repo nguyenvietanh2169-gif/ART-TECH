@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface WelcomeOverlayProps {
@@ -5,11 +6,23 @@ interface WelcomeOverlayProps {
 }
 
 export default function WelcomeOverlay({ onStart }: WelcomeOverlayProps) {
+  // Prevent touch movement to lock scrolling on mobile devices
+  useEffect(() => {
+    const preventDefault = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+    
+    document.addEventListener("touchmove", preventDefault, { passive: false });
+    return () => {
+      document.removeEventListener("touchmove", preventDefault);
+    };
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1.2, ease: "easeInOut" } }}
-      className="fixed inset-0 z-[9999] w-screen h-screen bg-black flex flex-col items-center justify-center select-none overflow-hidden"
+      className="fixed inset-0 z-[9999] w-full h-dvh bg-black flex flex-col items-center justify-center select-none overflow-hidden"
     >
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center max-w-2xl px-6 text-center">

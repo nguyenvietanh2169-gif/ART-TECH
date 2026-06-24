@@ -10,6 +10,9 @@ interface AudioPlayerProps {
 
 export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const gainNodeRef = useRef<GainNode | null>(null);
+  const sourceNodeRef = useRef<MediaElementAudioSourceNode | null>(null);
   const fadeIntervalRef = useRef<any>(null);
   const [hovered, setHovered] = useState(false);
 
@@ -30,18 +33,82 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
 
   const currentT = t[lang] || t.en;
 
+  // Initialize Web Audio graph
+  const initAudioGraph = () => {
+    const audio = audioRef.current;
+    if (!audio || audioContextRef.current) return;
+
+    try {
+      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      const ctx = new AudioContextClass();
+      const gain = ctx.createGain();
+      const source = ctx.createMediaElementSource(audio);
+
+      source.connect(gain);
+      gain.connect(ctx.destination);
+
+      audioContextRef.current = ctx;
+      gainNodeRef.current = gain;
+      sourceNodeRef.current = source;
+    } catch (e) {
+      console.error("Failed to initialize Web Audio API:", e);
+    }
+  };
+
   // Function to fade volume smoothly
   const fadeVolume = (targetVolume: number, duration: number = 1000) => {
     if (fadeIntervalRef.current) {
       clearInterval(fadeIntervalRef.current);
+      clearTimeout(fadeIntervalRef.current);
+      fadeIntervalRef.current = null;
     }
 
     const audio = audioRef.current;
+    const ctx = audioContextRef.current;
+    const gainNode = gainNodeRef.current;
+
     if (!audio) return;
 
+    // Use Web Audio API if available
+    if (ctx && gainNode) {
+      try {
+        const durationSeconds = duration / 1000;
+        const currentVal = gainNode.gain.value;
+
+        // Cancel scheduled changes and ramp smoothly
+        gainNode.gain.cancelScheduledValues(ctx.currentTime);
+        gainNode.gain.setValueAtTime(currentVal, ctx.currentTime);
+        gainNode.gain.linearRampToValueAtTime(targetVolume, ctx.currentTime + durationSeconds);
+
+        if (targetVolume === 0) {
+          fadeIntervalRef.current = setTimeout(() => {
+            if (gainNode.gain.value <= 0.05) {
+              audio.pause();
+            }
+            fadeIntervalRef.current = null;
+          }, duration);
+        } else {
+          if (audio.paused) {
+            audio.play().catch((err) => {
+              console.warn("Audio play failed during Web Audio fade-in:", err);
+            });
+          }
+        }
+        return;
+      } catch (err) {
+        console.warn("Web Audio API ramp failed, falling back to interval:", err);
+      }
+    }
+
+    // Fallback: Interval-based volume fade (HTML5 audio.volume)
     const startVolume = audio.volume;
     const diff = targetVolume - startVolume;
-    if (diff === 0) return;
+    if (diff === 0) {
+      if (targetVolume === 0) {
+        audio.pause();
+      }
+      return;
+    }
 
     const stepCount = 20;
     const stepDuration = duration / stepCount;
@@ -65,16 +132,45 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
     }, stepDuration);
   };
 
+  // Pre-initialize and resume AudioContext on first user interaction (touch or click)
+  useEffect(() => {
+    const handleGesture = () => {
+      initAudioGraph();
+      if (audioContextRef.current && audioContextRef.current.state === "suspended") {
+        audioContextRef.current.resume();
+      }
+    };
+
+    window.addEventListener("click", handleGesture, { once: true });
+    window.addEventListener("touchstart", handleGesture, { once: true });
+
+    return () => {
+      window.removeEventListener("click", handleGesture);
+      window.removeEventListener("touchstart", handleGesture);
+      if (audioContextRef.current) {
+        audioContextRef.current.close().catch(err => console.log("AudioContext close error:", err));
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // Set loop to true
     audio.loop = true;
 
     if (isPlaying) {
-      // Fade in to 0.4 volume
-      audio.volume = 0;
+      initAudioGraph();
+      if (audioContextRef.current && audioContextRef.current.state === "suspended") {
+        audioContextRef.current.resume();
+      }
+
+      if (gainNodeRef.current && audioContextRef.current) {
+        gainNodeRef.current.gain.setValueAtTime(0, audioContextRef.current.currentTime);
+      } else {
+        audio.volume = 0;
+      }
+
       audio.play()
         .then(() => {
           fadeVolume(0.4, 1500); // 1.5s fade-in
@@ -86,16 +182,24 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
           }
         });
     } else {
-      // Fade out and pause
       fadeVolume(0, 1000); // 1s fade-out
     }
 
     return () => {
       if (fadeIntervalRef.current) {
         clearInterval(fadeIntervalRef.current);
+        clearTimeout(fadeIntervalRef.current);
       }
     };
   }, [isPlaying]);
+
+  const handleToggleClick = () => {
+    initAudioGraph();
+    if (audioContextRef.current && audioContextRef.current.state === "suspended") {
+      audioContextRef.current.resume();
+    }
+    onTogglePlay();
+  };
 
   return (
     <div className="fixed bottom-6 right-6 z-[990] flex items-center gap-3">
@@ -113,7 +217,7 @@ export default function AudioPlayer({ isPlaying, onTogglePlay, lang }: AudioPlay
 
       {/* Elegant Glassmorphic Button */}
       <button
-        onClick={onTogglePlay}
+        onClick={handleToggleClick}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         aria-label={isPlaying ? currentT.tooltipPause : currentT.tooltipPlay}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { AnimatePresence } from "framer-motion";
 import Lenis from "lenis";
@@ -19,13 +19,16 @@ export default function App() {
   const [lang, setLang] = useState<Language>("vi");
   const [showOverlay, setShowOverlay] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
+  const lenisRef = useRef<Lenis | null>(null);
 
   // Prevent scrolling when welcome overlay is active
   useEffect(() => {
     if (showOverlay) {
       document.body.style.overflow = "hidden";
+      lenisRef.current?.stop();
     } else {
       document.body.style.overflow = "unset";
+      lenisRef.current?.start();
     }
     return () => {
       document.body.style.overflow = "unset";
@@ -42,6 +45,8 @@ export default function App() {
       smoothWheel: true,
     });
 
+    lenisRef.current = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -49,8 +54,14 @@ export default function App() {
 
     requestAnimationFrame(raf);
 
+    // Call stop if overlay is active initially
+    if (showOverlay) {
+      lenis.stop();
+    }
+
     return () => {
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
@@ -97,7 +108,7 @@ export default function App() {
         <Solution />
 
         {/* 3. Portfolio Showcase */}
-        <SearchHasChanged lang={lang} />
+        <SearchHasChanged lang={lang} onProductClick={() => setIsPlaying(false)} />
 
         {/* FAQs Accordion */}
         <FAQ lang={lang} />

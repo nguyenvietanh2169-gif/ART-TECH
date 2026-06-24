@@ -51,9 +51,10 @@ function ShowcaseVideo({ src }: ShowcaseVideoProps) {
 
 interface SearchHasChangedProps {
   lang: Language;
+  onProductClick?: () => void;
 }
 
-export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
+export default function SearchHasChanged({ lang, onProductClick }: SearchHasChangedProps) {
   const t = translations[lang].portfolio;
 
   const showcases = [
@@ -116,6 +117,7 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
                 href={show.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={onProductClick}
                 whileHover={{ y: -6 }}
                 data-cursor="view"
                 className="w-full aspect-video flex flex-col rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(255,255,255,0.02)] border border-border/20 bg-black cursor-pointer group"
@@ -181,6 +183,98 @@ export default function SearchHasChanged({ lang }: SearchHasChangedProps) {
             </motion.div>
           ))}
         </div>
+
+        {/* NFC Chip Card Section */}
+        <motion.div
+          {...fadeUp(0.45)}
+          className="w-full mt-16 bg-card/5 border border-border/10 rounded-3xl p-6 md:p-10 backdrop-blur-sm text-left flex flex-col lg:flex-row gap-8 lg:gap-12 items-center"
+        >
+          {/* Image Column */}
+          <div className="w-full lg:w-1/2 aspect-video lg:aspect-[4/3] rounded-2xl overflow-hidden border border-border/20 relative group bg-black shrink-0">
+            <img
+              src="/nfc-card.jpg"
+              alt="NFC Chip Card"
+              className="w-full h-full object-cover select-none filter contrast-[1.05] brightness-[1.05] transition-transform duration-[800ms] group-hover:scale-103"
+            />
+            {/* Hover overlay */}
+            <div className="absolute inset-0 bg-black/15 group-hover:bg-black/0 transition-colors duration-300 pointer-events-none" />
+          </div>
+
+          {/* Details Column */}
+          <div className="w-full flex flex-col gap-6">
+            <div>
+              {/* Badge */}
+              <span className="text-[10px] tracking-[0.2em] uppercase font-semibold text-accent border border-accent/20 px-2.5 py-1 rounded-full bg-accent/5">
+                {t.nfcSection.badge}
+              </span>
+              
+              {/* Title */}
+              <h3 className="font-semibold text-2xl md:text-3xl text-foreground tracking-wide mt-4 mb-2">
+                {t.nfcSection.title}
+              </h3>
+              
+              {/* Description */}
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-xl font-light">
+                {t.nfcSection.desc}
+              </p>
+            </div>
+
+            {/* Divider Line */}
+            <div className="w-full h-[1px] bg-white/5" />
+
+            {/* Info and pricing list */}
+            <div className="flex flex-col gap-5 text-xs text-muted-foreground font-light leading-relaxed">
+              {/* Free Gift */}
+              <div className="flex items-start gap-3">
+                <span className="text-accent text-base select-none leading-none">🎁</span>
+                <div>
+                  <h4 className="font-semibold text-foreground text-sm tracking-wide">
+                    {t.nfcSection.freeGiftLabel}
+                  </h4>
+                  <p className="text-muted-foreground mt-0.5">
+                    {t.nfcSection.freeGiftDesc}
+                  </p>
+                </div>
+              </div>
+
+              {/* Custom Logo Card */}
+              <div className="flex items-start gap-3">
+                <span className="text-accent text-base select-none leading-none">✨</span>
+                <div className="flex-grow">
+                  <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1 sm:gap-4">
+                    <h4 className="font-semibold text-foreground text-sm tracking-wide">
+                      {t.nfcSection.logoCustomLabel}
+                    </h4>
+                    <span className="font-mono font-bold text-foreground text-sm shrink-0 sm:text-right">
+                      {t.nfcSection.logoCustomPrice}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground mt-0.5">
+                    {t.nfcSection.logoCustomDesc}
+                  </p>
+                </div>
+              </div>
+
+              {/* Standalone Card */}
+              <div className="flex items-start gap-3">
+                <span className="text-accent text-base select-none leading-none">💳</span>
+                <div className="flex-grow">
+                  <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1 sm:gap-4">
+                    <h4 className="font-semibold text-foreground text-sm tracking-wide">
+                      {t.nfcSection.standaloneLabel}
+                    </h4>
+                    <span className="font-mono font-bold text-foreground text-sm shrink-0 sm:text-right">
+                      {t.nfcSection.standalonePrice}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground mt-0.5">
+                    {t.nfcSection.standaloneDesc}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* More coming notice */}
         <motion.div
