@@ -32,7 +32,7 @@ export const translations = {
       moreComing: "More unique designs are being crafted and will be updated continuously.",
       nfcSection: {
         badge: "Included",
-        title: "Smart Quick-Connection Cards (Included)",
+        title: "Smart Quick-Connection Cards",
         desc: "Tactile smart accessories pre-configured with your digital profile. Instantly share your portfolio with a single tap on any compatible smartphone.",
         freeGiftLabel: "Included in Project",
         freeGiftDesc: "02 pre-configured smart quick-connection cards included with every website design project.",
@@ -132,7 +132,7 @@ export const translations = {
       moreComing: "Nhiều thiết kế độc bản khác đang được thiết kế và sẽ liên tục được cập nhật thêm.",
       nfcSection: {
         badge: "Đã Bao Gồm",
-        title: "Thẻ Thông Minh Kết Nối Nhanh (Đã Bao Gồm)",
+        title: "Thẻ Thông Minh Kết Nối Nhanh",
         desc: "Sản phẩm công nghệ đi kèm liên kết trực tiếp với trang web của bạn. Chia sẻ hồ sơ cá nhân tức thì chỉ với một chạm trên điện thoại di động.",
         freeGiftLabel: "Đã bao gồm theo dự án",
         freeGiftDesc: "Cấu hình sẵn 02 thẻ thông minh kết nối nhanh theo Website khi thiết kế hồ sơ.",
