@@ -193,7 +193,7 @@ export default function SearchHasChanged({ lang, onProductClick }: SearchHasChan
           <div className="w-full lg:w-1/2 aspect-video lg:aspect-[4/3] rounded-2xl overflow-hidden relative group bg-black shrink-0">
             <img
               src="/nfc-card.jpg"
-              alt="NFC Chip Card"
+              alt="Smart Connection Card"
               className="w-full h-full object-cover select-none filter contrast-[1.05] brightness-[1.05] transition-transform duration-[800ms] group-hover:scale-103"
             />
             {/* Soft border gradient vignette overlay */}

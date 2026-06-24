@@ -23,7 +23,7 @@ export const translations = {
       vanzi1Price: "$180 USD",
       benefits: [
         "Lifetime ownership and lifetime warranty.",
-        "Includes 02 quick-connection NFC chip cards for your Website.",
+        "Includes 02 smart quick-connection cards for your Website.",
         "Exclusive interface refresh 02 times/year (Change avatar, banner, colors, fonts) for only 1,000,000 ₫.",
         "Free updates for images, info, and music at any time.",
         "Custom domain integration (optional): .com (+500,000 ₫/year) or .com.vn / .vn (+750,000 ₫/year)."
@@ -32,15 +32,15 @@ export const translations = {
       moreComing: "More unique designs are being crafted and will be updated continuously.",
       nfcSection: {
         badge: "Complimentary Accessory",
-        title: "Quick-Connection NFC Chip Cards",
-        desc: "Tactile hardware accessories pre-configured with your digital profile. Instantly share your portfolio with a single tap on any NFC-enabled smartphone.",
+        title: "Smart Quick-Connection Cards",
+        desc: "Tactile smart accessories pre-configured with your digital profile. Instantly share your portfolio with a single tap on any compatible smartphone.",
         freeGiftLabel: "Accompanying Gift",
-        freeGiftDesc: "02 complimentary quick-connection NFC chip cards included with every website design project.",
-        logoCustomLabel: "Custom Brand Logo NFC Cards",
+        freeGiftDesc: "02 complimentary smart quick-connection cards included with every website design project.",
+        logoCustomLabel: "Custom Brand Logo Smart Cards",
         logoCustomDesc: "Printed with your custom logo (only applicable when ordering a website profile package).",
         logoCustomPrice: "400,000 ₫ / 2 pcs",
-        standaloneLabel: "Standalone NFC Cards",
-        standaloneDesc: "Purchase custom NFC chip cards independently without ordering a website profile.",
+        standaloneLabel: "Standalone Smart Cards",
+        standaloneDesc: "Purchase custom smart cards independently without ordering a website profile.",
         standalonePrice: "500,000 ₫ / 2 pcs",
       },
     },
@@ -73,11 +73,11 @@ export const translations = {
     },
     faq: {
       title: "Common Questions",
-      subtitle: "Everything you need to know about our web design services, NFC hardware, and lifetime policies.",
+      subtitle: "Everything you need to know about our web design services, smart hardware, and lifetime policies.",
       list: [
         {
-          q: "How does the included quick-connection NFC chip card work?",
-          a: "The NFC chip card contains a microchip pre-configured with your website URL. When anyone taps their NFC-enabled smartphone against the card, your website opens instantly. It is an extremely modern, tactile way to share your digital brand."
+          q: "How does the included smart quick-connection card work?",
+          a: "The smart connection card contains a microchip pre-configured with your website URL. When anyone taps their smartphone against the card, your website opens instantly. It is an extremely modern, tactile way to share your digital brand."
         },
         {
           q: "Can I update images, information, and music by myself later?",
@@ -123,7 +123,7 @@ export const translations = {
       vanzi1Price: "4.500.000 ₫",
       benefits: [
         "Sở hữu và bảo hành trọn đời sản phẩm.",
-        "Tặng kèm 02 thẻ chip NFC kết nối nhanh đến Website.",
+        "Tặng kèm 02 thẻ thông minh kết nối nhanh đến Website.",
         "Đặc quyền làm mới giao diện 02 lần/năm (Thay đổi avatar, banner, màu sắc, font chữ) chỉ với 1.000.000 đ.",
         "Tự do cập nhật hình ảnh, thông tin và âm nhạc miễn phí.",
         "Tích hợp tên miền riêng (không bắt buộc): .com (+500.000 đ/năm) hoặc .com.vn / .vn (+750.000 đ/năm)."
@@ -132,15 +132,15 @@ export const translations = {
       moreComing: "Nhiều thiết kế độc bản khác đang được thiết kế và sẽ liên tục được cập nhật thêm.",
       nfcSection: {
         badge: "Quà Tặng Đi Kèm",
-        title: "Thẻ Chip NFC Kết Nối Nhanh",
+        title: "Thẻ Thông Minh Kết Nối Nhanh",
         desc: "Sản phẩm công nghệ đi kèm liên kết trực tiếp với trang web của bạn. Chia sẻ hồ sơ cá nhân tức thì chỉ với một chạm trên điện thoại di động.",
         freeGiftLabel: "Quà tặng kèm dự án",
-        freeGiftDesc: "Tặng kèm miễn phí 02 thẻ chip NFC kết nối nhanh cấu hình sẵn theo Website khi thiết kế hồ sơ.",
-        logoCustomLabel: "Đặt làm NFC riêng theo Logo",
+        freeGiftDesc: "Tặng kèm miễn phí 02 thẻ thông minh kết nối nhanh cấu hình sẵn theo Website khi thiết kế hồ sơ.",
+        logoCustomLabel: "Đặt làm thẻ thông minh riêng theo Logo",
         logoCustomDesc: "Thiết kế và in ấn logo riêng chính chủ (khi đặt kèm gói thiết kế profile).",
         logoCustomPrice: "400.000 đ / 2 chiếc",
-        standaloneLabel: "Mua thẻ chip lẻ",
-        standaloneDesc: "Chỉ mua thẻ chip NFC độc lập, không kèm gói dịch vụ thiết kế profile.",
+        standaloneLabel: "Mua thẻ thông minh lẻ",
+        standaloneDesc: "Chỉ mua thẻ thông minh kết nối nhanh độc lập, không kèm gói dịch vụ thiết kế profile.",
         standalonePrice: "500.000 đ / 2 chiếc",
       },
     },
@@ -173,11 +173,11 @@ export const translations = {
     },
     faq: {
       title: "Câu Hỏi Thường Gặp",
-      subtitle: "Mọi điều bạn cần biết về dịch vụ thiết kế web nghệ thuật, phần cứng NFC và chính sách bảo hành.",
+      subtitle: "Mọi điều bạn cần biết về dịch vụ thiết kế web nghệ thuật, thẻ kết nối thông minh và chính sách bảo hành.",
       list: [
         {
-          q: "Thẻ chip NFC kết nối nhanh tặng kèm hoạt động như thế nào?",
-          a: "Thẻ chip NFC chứa một con chip siêu nhỏ được liên kết trực tiếp đến tên miền trang web của bạn. Khi bất kỳ ai chạm điện thoại của họ (có bật NFC) vào thẻ chip, trang web của bạn sẽ ngay lập tức tự động hiển thị trên màn hình của họ mà không cần tìm kiếm. Đây là một phương thức truyền thông cá nhân cực kỳ hiện đại."
+          q: "Thẻ thông minh kết nối nhanh tặng kèm hoạt động như thế nào?",
+          a: "Thẻ thông minh kết nối nhanh chứa một con chip siêu nhỏ được liên kết trực tiếp đến tên miền trang web của bạn. Khi bất kỳ ai chạm nhẹ điện thoại của họ vào thẻ, trang web của bạn sẽ ngay lập tức tự động hiển thị trên màn hình của họ mà không cần tìm kiếm. Đây là một phương thức truyền thông cá nhân cực kỳ hiện đại."
         },
         {
           q: "Sau này tôi có tự cập nhật hình ảnh, thông tin và nhạc được không?",
