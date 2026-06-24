@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 interface WelcomeOverlayProps {
   onStart: () => void;
@@ -55,7 +56,7 @@ export default function WelcomeOverlay({ onStart }: WelcomeOverlayProps) {
           </h1>
         </motion.div>
 
-        {/* Start Button (Liquid glass styled, containing only the text "START") */}
+        {/* Start Button (Minimalist circular arrow button) */}
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -63,14 +64,12 @@ export default function WelcomeOverlay({ onStart }: WelcomeOverlayProps) {
         >
           <button
             onClick={onStart}
-            className="liquid-glass group relative px-10 py-3.5 rounded-full transition-all duration-500 hover:scale-105 active:scale-98"
+            className="liquid-glass group relative w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 hover:scale-105 active:scale-98"
           >
             {/* Hover background white transition */}
             <span className="absolute inset-0 bg-white translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0" />
 
-            <span className="relative z-10 text-xs sm:text-sm font-semibold tracking-[0.25em] text-white transition-colors duration-500 group-hover:text-black">
-              START
-            </span>
+            <ArrowRight className="relative z-10 w-5 h-5 text-white transition-all duration-500 group-hover:text-black group-hover:translate-x-[2px]" />
           </button>
         </motion.div>
       </div>
