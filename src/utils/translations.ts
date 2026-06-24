@@ -23,7 +23,7 @@ export const translations = {
       vanzi1Price: "$180 USD",
       benefits: [
         "Lifetime ownership and lifetime warranty.",
-        "Includes 02 smart quick-connection cards for your Website.",
+        "02 smart quick-connection cards for your Website (Included).",
         "Exclusive interface refresh 02 times/year (Change avatar, banner, colors, fonts) for only 1,000,000 ₫.",
         "Free updates for images, info, and music at any time.",
         "Custom domain integration (optional): .com (+500,000 ₫/year) or .com.vn / .vn (+750,000 ₫/year)."
@@ -31,11 +31,11 @@ export const translations = {
       depositNote: "* 50% advance payment required to initiate the project.",
       moreComing: "More unique designs are being crafted and will be updated continuously.",
       nfcSection: {
-        badge: "Complimentary Accessory",
-        title: "Smart Quick-Connection Cards",
+        badge: "Included",
+        title: "Smart Quick-Connection Cards (Included)",
         desc: "Tactile smart accessories pre-configured with your digital profile. Instantly share your portfolio with a single tap on any compatible smartphone.",
-        freeGiftLabel: "Accompanying Gift",
-        freeGiftDesc: "02 complimentary smart quick-connection cards included with every website design project.",
+        freeGiftLabel: "Included in Project",
+        freeGiftDesc: "02 pre-configured smart quick-connection cards included with every website design project.",
         logoCustomLabel: "Custom Brand Logo Smart Cards",
         logoCustomDesc: "Printed with your custom logo (only applicable when ordering a website profile package).",
         logoCustomPrice: "400,000 ₫ / 2 pcs",
@@ -123,7 +123,7 @@ export const translations = {
       vanzi1Price: "4.500.000 ₫",
       benefits: [
         "Sở hữu và bảo hành trọn đời sản phẩm.",
-        "Tặng kèm 02 thẻ thông minh kết nối nhanh đến Website.",
+        "02 thẻ thông minh kết nối nhanh đến Website (Đã bao gồm).",
         "Đặc quyền làm mới giao diện 02 lần/năm (Thay đổi avatar, banner, màu sắc, font chữ) chỉ với 1.000.000 đ.",
         "Tự do cập nhật hình ảnh, thông tin và âm nhạc miễn phí.",
         "Tích hợp tên miền riêng (không bắt buộc): .com (+500.000 đ/năm) hoặc .com.vn / .vn (+750.000 đ/năm)."
@@ -131,11 +131,11 @@ export const translations = {
       depositNote: "* Áp dụng thanh toán trước 50% để bắt đầu thiết kế dự án.",
       moreComing: "Nhiều thiết kế độc bản khác đang được thiết kế và sẽ liên tục được cập nhật thêm.",
       nfcSection: {
-        badge: "Quà Tặng Đi Kèm",
-        title: "Thẻ Thông Minh Kết Nối Nhanh",
+        badge: "Đã Bao Gồm",
+        title: "Thẻ Thông Minh Kết Nối Nhanh (Đã Bao Gồm)",
         desc: "Sản phẩm công nghệ đi kèm liên kết trực tiếp với trang web của bạn. Chia sẻ hồ sơ cá nhân tức thì chỉ với một chạm trên điện thoại di động.",
-        freeGiftLabel: "Quà tặng kèm dự án",
-        freeGiftDesc: "Tặng kèm miễn phí 02 thẻ thông minh kết nối nhanh cấu hình sẵn theo Website khi thiết kế hồ sơ.",
+        freeGiftLabel: "Đã bao gồm theo dự án",
+        freeGiftDesc: "Cấu hình sẵn 02 thẻ thông minh kết nối nhanh theo Website khi thiết kế hồ sơ.",
         logoCustomLabel: "Đặt làm thẻ thông minh riêng theo Logo",
         logoCustomDesc: "Thiết kế và in ấn logo riêng chính chủ (khi đặt kèm gói thiết kế profile).",
         logoCustomPrice: "400.000 đ / 2 chiếc",
@@ -176,7 +176,7 @@ export const translations = {
       subtitle: "Mọi điều bạn cần biết về dịch vụ thiết kế web nghệ thuật, thẻ kết nối thông minh và chính sách bảo hành.",
       list: [
         {
-          q: "Thẻ thông minh kết nối nhanh tặng kèm hoạt động như thế nào?",
+          q: "Thẻ thông minh kết nối nhanh (đã bao gồm) hoạt động như thế nào?",
           a: "Thẻ thông minh kết nối nhanh chứa một con chip siêu nhỏ được liên kết trực tiếp đến tên miền trang web của bạn. Khi bất kỳ ai chạm nhẹ điện thoại của họ vào thẻ, trang web của bạn sẽ ngay lập tức tự động hiển thị trên màn hình của họ mà không cần tìm kiếm. Đây là một phương thức truyền thông cá nhân cực kỳ hiện đại."
         },
         {
