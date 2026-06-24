@@ -238,32 +238,32 @@ export default function SearchHasChanged({ lang, onProductClick }: SearchHasChan
 
               {/* Custom Logo Card */}
               <div className="w-full">
-                <div className="flex justify-between items-baseline gap-4">
-                  <h4 className="font-semibold text-foreground text-sm tracking-wide">
-                    {t.nfcSection.logoCustomLabel}
-                  </h4>
+                <h4 className="font-semibold text-foreground text-sm tracking-wide">
+                  {t.nfcSection.logoCustomLabel}
+                </h4>
+                <div className="flex justify-between items-baseline gap-4 mt-1">
+                  <p className="text-muted-foreground font-light text-xs">
+                    {t.nfcSection.logoCustomDesc}
+                  </p>
                   <span className="font-mono font-bold text-foreground text-sm shrink-0 text-right">
                     {t.nfcSection.logoCustomPrice}
                   </span>
                 </div>
-                <p className="text-muted-foreground mt-1 font-light">
-                  {t.nfcSection.logoCustomDesc}
-                </p>
               </div>
 
               {/* Standalone Card */}
               <div className="w-full">
-                <div className="flex justify-between items-baseline gap-4">
-                  <h4 className="font-semibold text-foreground text-sm tracking-wide">
-                    {t.nfcSection.standaloneLabel}
-                  </h4>
+                <h4 className="font-semibold text-foreground text-sm tracking-wide">
+                  {t.nfcSection.standaloneLabel}
+                </h4>
+                <div className="flex justify-between items-baseline gap-4 mt-1">
+                  <p className="text-muted-foreground font-light text-xs">
+                    {t.nfcSection.standaloneDesc}
+                  </p>
                   <span className="font-mono font-bold text-foreground text-sm shrink-0 text-right">
                     {t.nfcSection.standalonePrice}
                   </span>
                 </div>
-                <p className="text-muted-foreground mt-1 font-light">
-                  {t.nfcSection.standaloneDesc}
-                </p>
               </div>
             </div>
           </div>
