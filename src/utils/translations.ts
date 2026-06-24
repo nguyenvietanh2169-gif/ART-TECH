@@ -176,7 +176,7 @@ export const translations = {
       subtitle: "Mọi điều bạn cần biết về dịch vụ thiết kế web nghệ thuật, thẻ kết nối thông minh và chính sách bảo hành.",
       list: [
         {
-          q: "Thẻ thông minh kết nối nhanh (đã bao gồm) hoạt động như thế nào?",
+          q: "Thẻ thông minh kết nối nhanh hoạt động như thế nào?",
           a: "Thẻ thông minh kết nối nhanh chứa một con chip siêu nhỏ được liên kết trực tiếp đến tên miền trang web của bạn. Khi bất kỳ ai chạm nhẹ điện thoại của họ vào thẻ, trang web của bạn sẽ ngay lập tức tự động hiển thị trên màn hình của họ mà không cần tìm kiếm. Đây là một phương thức truyền thông cá nhân cực kỳ hiện đại."
         },
         {
