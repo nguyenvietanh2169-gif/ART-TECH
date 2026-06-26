@@ -265,6 +265,15 @@ export default function SearchHasChanged({ lang, onProductClick }: SearchHasChan
                   </span>
                 </div>
               </div>
+
+              {/* Disclaimer */}
+              {t.nfcSection.disclaimer && (
+                <div className="w-full pt-4 border-t border-white/5">
+                  <p className="text-[10px] text-muted-foreground/45 leading-relaxed font-light font-sans tracking-wide">
+                    {t.nfcSection.disclaimer}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </motion.div>
