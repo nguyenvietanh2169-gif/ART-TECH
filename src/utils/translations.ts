@@ -143,7 +143,7 @@ export const translations = {
         standaloneLabel: "Đặt mua thẻ thông minh riêng",
         standaloneDesc: "Chỉ mua thẻ thông minh kết nối nhanh độc lập, không kèm gói dịch vụ thiết kế profile.",
         standalonePrice: "500.000 đ / 2 chiếc",
-        disclaimer: "* Do đặc thù chế tác cơ khí 3D độ nổi cao, file logo cá nhân hóa sẽ được đội ngũ kỹ thuật thẩm định cấu trúc chi tiết trước khi tiến hành bấm phôi.",
+        disclaimer: "* Do đặc thù chế tác cơ khí 3D độ nổi cao, file logo cá nhân hóa sẽ được đội ngũ kỹ thuật thẩm định cấu trúc chi tiết trước khi tiến hành chế tác.",
       },
     },
     about: {
