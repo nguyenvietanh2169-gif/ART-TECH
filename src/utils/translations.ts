@@ -46,9 +46,9 @@ export const translations = {
           rows: [
             { qty: "3 - 10 pcs", price: "170,000 ₫" },
             { qty: "11 - 29 pcs", price: "130,000 ₫" },
-            { qty: "30 - 50 pcs", price: "95,000 ₫ - 110,000 ₫" },
-            { qty: "51 - 150 pcs", price: "75,000 ₫ - 85,000 ₫" },
-            { qty: "151 - 300 pcs", price: "55,000 ₫ - 65,000 ₫" },
+            { qty: "30 - 50 pcs", price: "100,000 ₫" },
+            { qty: "51 - 150 pcs", price: "80,000 ₫" },
+            { qty: "151 - 300 pcs", price: "60,000 ₫" },
           ]
         },
         disclaimer: "* Due to the nature of high-relief 3D mechanical fabrication, custom logo files will be structural-assessed by our technical team prior to mold engraving.",
@@ -156,9 +156,9 @@ export const translations = {
           rows: [
             { qty: "3 - 10 cái", price: "170.000đ" },
             { qty: "11 - 29 cái", price: "130.000đ" },
-            { qty: "30 - 50 cái", price: "95.000đ - 110.000đ" },
-            { qty: "51 - 150 cái", price: "75.000đ - 85.000đ" },
-            { qty: "151 - 300 cái", price: "55.000đ - 65.000đ" },
+            { qty: "30 - 50 cái", price: "100.000đ" },
+            { qty: "51 - 150 cái", price: "80.000đ" },
+            { qty: "151 - 300 cái", price: "60.000đ" },
           ]
         },
         disclaimer: "* Do đặc thù chế tác cơ khí 3D độ nổi cao, file logo cá nhân hóa sẽ được đội ngũ kỹ thuật thẩm định cấu trúc chi tiết trước khi tiến hành chế tác.",
