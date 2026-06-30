@@ -253,18 +253,36 @@ export default function SearchHasChanged({ lang, onProductClick }: SearchHasChan
 
               {/* Standalone Keychain */}
               <div className="w-full">
-                <h4 className="font-semibold text-foreground text-sm tracking-wide">
+                <h4 className="font-semibold text-foreground text-sm tracking-wide mb-1.5">
                   {t.nfcSection.keychainLabel}
                 </h4>
-                <div className="flex flex-col sm:flex-row justify-between items-start gap-3 sm:gap-4 mt-1">
-                  <p className="text-muted-foreground font-light text-xs sm:max-w-[60%]">
-                    {t.nfcSection.keychainDesc}
-                  </p>
-                  <div className="flex flex-col gap-0.5 font-mono font-bold text-foreground text-xs sm:text-sm shrink-0 sm:text-right w-full sm:w-auto">
-                    {t.nfcSection.keychainTiers.map((tier: string, i: number) => (
-                      <span key={i}>{tier}</span>
-                    ))}
-                  </div>
+                <p className="text-muted-foreground font-light text-xs mb-3">
+                  {t.nfcSection.keychainDesc}
+                </p>
+                <div className="w-full max-w-sm rounded-lg overflow-hidden border border-white/5 bg-white/[0.01]">
+                  <table className="w-full text-left border-collapse text-[11px]">
+                    <thead>
+                      <tr className="border-b border-white/5 bg-white/[0.02]">
+                        <th className="py-2 px-3 font-medium text-foreground/75 tracking-wider uppercase text-[9px]">
+                          {t.nfcSection.keychainTable.headers[0]}
+                        </th>
+                        <th className="py-2 px-3 font-medium text-foreground/75 tracking-wider uppercase text-[9px] text-right">
+                          {t.nfcSection.keychainTable.headers[1]}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="font-light text-muted-foreground">
+                      {t.nfcSection.keychainTable.rows.map((row: { qty: string; price: string }, i: number) => (
+                        <tr 
+                          key={i} 
+                          className="border-b border-white/5 last:border-none hover:bg-white/[0.02] transition-colors duration-150"
+                        >
+                          <td className="py-2 px-3 font-sans">{row.qty}</td>
+                          <td className="py-2 px-3 text-right font-mono text-foreground/90">{row.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
 
