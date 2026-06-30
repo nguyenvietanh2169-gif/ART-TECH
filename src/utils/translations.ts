@@ -39,6 +39,13 @@ export const translations = {
         standaloneLabel: "Order Custom Smart Cards Separately",
         standaloneDesc: "Purchase independent smart quick-connection cards, custom 3D modeled and crafted based on your logo, without website profile design.",
         standalonePrice: "400,000 ₫ / 2 pcs",
+        keychainLabel: "Order Custom Smart Keychains Separately",
+        keychainDesc: "Purchase independent smart quick-connection keychains, custom 3D modeled based on your logo, without website profile design.",
+        keychainTiers: [
+          "30 - 50 pcs: 95,000 ₫ - 110,000 ₫ / pc",
+          "51 - 150 pcs: 75,000 ₫ - 85,000 ₫ / pc",
+          "151 - 300 pcs: 55,000 ₫ - 65,000 ₫ / pc"
+        ],
         disclaimer: "* Due to the nature of high-relief 3D mechanical fabrication, custom logo files will be structural-assessed by our technical team prior to mold engraving.",
       },
     },
@@ -137,6 +144,13 @@ export const translations = {
         standaloneLabel: "Đặt làm thẻ thông minh riêng",
         standaloneDesc: "Chỉ mua thẻ thông minh kết nối nhanh độc lập, chế tác dựng khối 3D theo logo riêng, không kèm gói dịch vụ thiết kế profile.",
         standalonePrice: "400.000 đ / 2 chiếc",
+        keychainLabel: "Đặt làm móc khoá lẻ",
+        keychainDesc: "Chỉ mua móc khoá thông minh kết nối nhanh độc lập, chế tác dựng khối 3D theo logo riêng, không kèm gói dịch vụ thiết kế profile.",
+        keychainTiers: [
+          "Mốc 30 - 50 cái: 95.000đ - 110.000đ / chiếc",
+          "Mốc 51 - 150 cái: 75.000đ - 85.000đ / chiếc",
+          "Mốc 151 - 300 cái: 55.000đ - 65.000đ / chiếc"
+        ],
         disclaimer: "* Do đặc thù chế tác cơ khí 3D độ nổi cao, file logo cá nhân hóa sẽ được đội ngũ kỹ thuật thẩm định cấu trúc chi tiết trước khi tiến hành chế tác.",
       },
     },

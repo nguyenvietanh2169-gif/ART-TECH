@@ -251,6 +251,23 @@ export default function SearchHasChanged({ lang, onProductClick }: SearchHasChan
                 </div>
               </div>
 
+              {/* Standalone Keychain */}
+              <div className="w-full">
+                <h4 className="font-semibold text-foreground text-sm tracking-wide">
+                  {t.nfcSection.keychainLabel}
+                </h4>
+                <div className="flex flex-col sm:flex-row justify-between items-start gap-3 sm:gap-4 mt-1">
+                  <p className="text-muted-foreground font-light text-xs sm:max-w-[60%]">
+                    {t.nfcSection.keychainDesc}
+                  </p>
+                  <div className="flex flex-col gap-0.5 font-mono font-bold text-foreground text-xs sm:text-sm shrink-0 sm:text-right w-full sm:w-auto">
+                    {t.nfcSection.keychainTiers.map((tier: string, i: number) => (
+                      <span key={i}>{tier}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
               {/* Disclaimer */}
               {t.nfcSection.disclaimer && (
                 <div className="w-full pt-4 border-t border-white/5">
