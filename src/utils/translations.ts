@@ -44,6 +44,8 @@ export const translations = {
         keychainTable: {
           headers: ["Quantity", "Unit Price / pc"],
           rows: [
+            { qty: "3 - 10 pcs", price: "170,000 ₫" },
+            { qty: "11 - 29 pcs", price: "130,000 ₫" },
             { qty: "30 - 50 pcs", price: "95,000 ₫ - 110,000 ₫" },
             { qty: "51 - 150 pcs", price: "75,000 ₫ - 85,000 ₫" },
             { qty: "151 - 300 pcs", price: "55,000 ₫ - 65,000 ₫" },
@@ -152,6 +154,8 @@ export const translations = {
         keychainTable: {
           headers: ["Số lượng", "Đơn giá / chiếc"],
           rows: [
+            { qty: "3 - 10 cái", price: "170.000đ" },
+            { qty: "11 - 29 cái", price: "130.000đ" },
             { qty: "30 - 50 cái", price: "95.000đ - 110.000đ" },
             { qty: "51 - 150 cái", price: "75.000đ - 85.000đ" },
             { qty: "151 - 300 cái", price: "55.000đ - 65.000đ" },
