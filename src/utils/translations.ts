@@ -33,14 +33,12 @@ export const translations = {
       nfcSection: {
         badge: "Included",
         title: "Smart Quick-Connection Cards",
-        desc: "Tactile smart accessories pre-configured with your digital profile. Instantly share your portfolio with a single tap on any compatible smartphone.",
+        desc: "Tactile smart accessories pre-configured with your digital website. Instantly share your portfolio with a single tap on any compatible smartphone.",
         freeGiftLabel: "Included in Project",
         freeGiftDesc: "02 pre-configured smart quick-connection cards, custom 3D modeled and crafted based on your official logo.",
         standaloneLabel: "Order Custom Smart Cards Separately",
-        standaloneDesc: "Purchase independent smart quick-connection cards, custom 3D modeled and crafted based on your logo, without website profile design.",
+        standaloneDesc: "Purchase independent smart quick-connection cards, custom 3D modeled and crafted based on your logo, without website design.",
         standalonePrice: "400,000 ₫ / 2 pcs",
-        keychainLabel: "Order Custom Smart Keychains Separately",
-        keychainDesc: "Purchase independent smart quick-connection keychains, custom 3D modeled based on your logo, without website profile design.",
         keychainTable: {
           headers: ["Quantity", "Unit Price / pc"],
           rows: [
@@ -147,10 +145,8 @@ export const translations = {
         freeGiftLabel: "Đã bao gồm theo dự án",
         freeGiftDesc: "Cấu hình sẵn 02 thẻ thông minh kết nối nhanh, thiết kế dựng khối và chế tác 3D riêng theo logo chính chủ.",
         standaloneLabel: "Đặt làm thẻ thông minh riêng",
-        standaloneDesc: "Chỉ mua thẻ thông minh kết nối nhanh độc lập, chế tác dựng khối 3D theo logo riêng, không kèm gói dịch vụ thiết kế profile.",
+        standaloneDesc: "Chỉ mua thẻ thông minh kết nối nhanh độc lập, chế tác dựng khối 3D theo logo riêng, không kèm gói dịch vụ thiết kế website.",
         standalonePrice: "400.000 đ / 2 chiếc",
-        keychainLabel: "Đặt làm móc khoá lẻ",
-        keychainDesc: "Chỉ mua móc khoá thông minh kết nối nhanh độc lập, chế tác dựng khối 3D theo logo riêng, không kèm gói dịch vụ thiết kế profile.",
         keychainTable: {
           headers: ["Số lượng", "Đơn giá / chiếc"],
           rows: [

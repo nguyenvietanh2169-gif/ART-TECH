@@ -253,12 +253,6 @@ export default function SearchHasChanged({ lang, onProductClick }: SearchHasChan
 
               {/* Standalone Keychain */}
               <div className="w-full">
-                <h4 className="font-semibold text-foreground text-sm tracking-wide mb-1.5">
-                  {t.nfcSection.keychainLabel}
-                </h4>
-                <p className="text-muted-foreground font-light text-xs mb-3">
-                  {t.nfcSection.keychainDesc}
-                </p>
                 <div className="w-full max-w-sm rounded-lg overflow-hidden border border-white/5 bg-white/[0.01]">
                   <table className="w-full text-left border-collapse text-[11px]">
                     <thead>
